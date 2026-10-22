@@ -123,13 +123,22 @@ export default function Home() {
             <a href="#wines" className="transition hover:text-[#d4a24e]">酒款陈列</a>
             <a href="#taste" className="transition hover:text-[#d4a24e]">品鉴之道</a>
             <a href="#features" className="transition hover:text-[#d4a24e]">庄园特色</a>
+            <a href="/products" className="transition hover:text-[#d4a24e]">在售商品</a>
           </div>
-          <a
-            href="#contact"
-            className="rounded-full border border-[#d4a24e]/60 px-5 py-2 text-sm text-[#d4a24e] transition hover:bg-[#d4a24e] hover:text-[#1a0b2e]"
-          >
-            联系品鉴
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="/login"
+              className="rounded-full border border-[#d4a24e]/60 px-5 py-2 text-sm text-[#d4a24e] transition hover:bg-[#d4a24e] hover:text-[#1a0b2e]"
+            >
+              登录
+            </a>
+            <a
+              href="#contact"
+              className="hidden rounded-full bg-gradient-to-r from-[#6d28d9] to-[#8b5cf6] px-5 py-2 text-sm text-white transition hover:opacity-90 sm:inline-block"
+            >
+              联系品鉴
+            </a>
+          </div>
         </nav>
       </header>
 
