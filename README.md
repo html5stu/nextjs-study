@@ -33,6 +33,28 @@ npm run build
 npm run start
 ```
 
+## 数据库与登录（Supabase + Prisma）
+
+- 数据库：Supabase Postgres，通过 Prisma ORM 访问
+- 模型：`User`（邮箱密码登录）、`Product`（通用商品）
+- 认证：bcrypt 密码哈希 + JWT httpOnly 会话 cookie（7 天）
+- 接口：`POST /api/auth/register`、`POST /api/auth/login`、`POST /api/auth/logout`、`GET /api/auth/me`、`GET /api/products`
+- 页面：`/login`、`/register`、`/products`
+
+环境变量（见 `.env.example`，本地复制为 `.env`）：
+- `DATABASE_URL`：连接池连接串
+- `DIRECT_URL`：迁移用连接串
+- `SESSION_SECRET`：会话签名密钥
+
+数据库命令：
+```bash
+npm run db:migrate    # prisma migrate deploy（部署迁移）
+npm run db:seed       # 写入示例商品
+npx prisma studio     # 可视化查看表
+```
+
+> 密码含特殊字符时须 URL 编码（如 `?` → `%3F`、`$` → `%24`）。
+
 ## 部署
 
-已部署至 Vercel，由 GitHub 仓库 `html5stu/nextjs-study` 关联自动构建。
+已部署至 Vercel（https://nextjs-study-mu-red.vercel.app），由 GitHub 仓库 `html5stu/nextjs-study` 关联自动构建，push 到 main 即自动部署。
